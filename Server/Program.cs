@@ -13,6 +13,13 @@ namespace Server
         public static IPAddress IpAdress;
         public static int Port;
 
+        public static bool AutorizationUser(string login, string password)
+        {
+            User user = null;
+            user = Users.Find(x => x.login == login && x.password == password);
+            return user != null;
+        }
+
         static void Main(string[] args)
         {
         }
